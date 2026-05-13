@@ -7,7 +7,7 @@
 
 Chime TTS is a custom Home Assistant integration that eliminates the audio lag between playing a chime/notification sound effect before a TTS audio notification.
 
-#### If you find Chime TTS useful, consider showing your support: <a href="https://www.buymeacoffee.com/nimroddolev" target="_blank"><img src="https://i.ibb.co/D1sqFY8/buy-me-a-coffee.png" alt="Buy Me A Coffee"></a>
+#### This ia a ressurection of a dead project with minor fixes. All the hard work and thanks belongs to https://github.com/nimroddolev/chime_tts
 
 
 - [What is Chime TTS?](https://nimroddolev.github.io/chime_tts/docs/getting-started#what-is-chime-tts)
