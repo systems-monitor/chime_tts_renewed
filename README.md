@@ -81,7 +81,7 @@ Chime TTS (Renewed) adds 4 new actions to your Home Assistant instance: `chime_t
 - [`chime_tts_renewed.clear_cache`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/clear_cache-action): Clear generated audio cache.
 
 ### Notify Entities
-Chime TTS adds a [notify platform](https://www.home-assistant.io/integrations/notify/): "[chime_tts_renewed](https://nimroddolev.github.io/chime_tts/docs/documentation/notify)", which allows you to create fully customised notify entries for use in your automations and scripts.
+Chime TTS Renewed adds a [notify platform](https://www.home-assistant.io/integrations/notify/): "[chime_tts_renewed](https://nimroddolev.github.io/chime_tts/docs/documentation/notify)", which allows you to create fully customised notify entries for use in your automations and scripts.
 
 ***
 
