@@ -1,0 +1,22 @@
+{
+  "domain": "chime_tts_renewed",
+  "name": "Chime TTS Renewed",
+  "after_dependencies": [
+    "api",
+    "http",
+    "media_source"
+  ],
+  "codeowners": [
+    "@systems-monitor"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/systems-monitor/chime_tts_renewed",
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/systems-monitor/chime_tts_renewed/issues",
+  "requirements": [
+    "pydub",
+    "aiofiles"
+  ],
+  "version": "1.2.3-renewed.0"
+}

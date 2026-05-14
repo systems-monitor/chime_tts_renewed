@@ -112,12 +112,12 @@ async def async_setup(hass: HomeAssistant, _config_entry: ConfigEntry) -> bool: 
     # Say Service #
 
     async def async_say(service, is_say_url = False):
-        """chime_tts.say, chime_tts.say_url & chime_tts.replay entry point."""
+        """chime_tts_renewed.say, chime_tts_renewed.say_url & chime_tts_renewed.replay entry point."""
         if is_say_url is False:
             if service is None:
                 helpers.debug_title(f"Chime TTS Replay Called. Version {VERSION}")
                 if _data.get("service") is None:
-                    raise HomeAssistantError("You must first make a service call to chime_tts.say before you can replay it.")
+                    raise HomeAssistantError("You must first make a service call to chime_tts_renewed.say before you can replay it.")
             else:
                 helpers.debug_title(f"Chime TTS Say Called. Version {VERSION}")
 
@@ -127,7 +127,7 @@ async def async_setup(hass: HomeAssistant, _config_entry: ConfigEntry) -> bool: 
         try:
             result = await queue.add_to_queue(async_say_execute, timeout, service, is_say_url)
         except Exception as error:
-            error_string = f"Error calling chime_tts.say{'_url' if is_say_url else ''} service: {str(error)}"
+            error_string = f"Error calling chime_tts_renewed.say{'_url' if is_say_url else ''} service: {str(error)}"
             _LOGGER.error("%s", str(error_string))
             raise
 
@@ -146,7 +146,7 @@ async def async_setup(hass: HomeAssistant, _config_entry: ConfigEntry) -> bool: 
             # Replay service called: use previous service object
             service = _data.get("service")
             if service is None:
-                raise HomeAssistantError("A service call to chime_tts.say must be made before you can replay it.")
+                raise HomeAssistantError("A service call to chime_tts_renewed.say must be made before you can replay it.")
         else:
             _data["service"] = service
 
@@ -184,7 +184,7 @@ async def async_setup(hass: HomeAssistant, _config_entry: ConfigEntry) -> bool: 
     # Say URL Service #
 
     async def async_say_url(service) -> ServiceResponse:
-        """Create a public URL to an audio file generated with the `chime_tts.say` service."""
+        """Create a public URL to an audio file generated with the `chime_tts_renewed.say` service."""
         helpers.debug_title(f"Chime TTS Say URL Called. Version {VERSION}")
         return await async_say(service, True)
 
@@ -197,7 +197,7 @@ async def async_setup(hass: HomeAssistant, _config_entry: ConfigEntry) -> bool: 
 
     # Replay Service #
     async def async_replay(_service):
-        """Repeat the last service call to chime_tts.say with the same parameters."""
+        """Repeat the last service call to chime_tts_renewed.say with the same parameters."""
         return await async_say(None, False)
 
     hass.services.async_register(DOMAIN,
@@ -325,7 +325,7 @@ async def async_prepare_media(hass: HomeAssistant, params, options, media_player
                                 if completion_time >= 1
                                 else f"{completion_time * 1000} ms")
 
-    # Convert public file path to external URL for chime_tts.say_url
+    # Convert public file path to external URL for chime_tts_renewed.say_url
     if is_say_url:
         _LOGGER.debug("Final URL = %s", public_path)
         helpers.debug_finish(f"Chime TTS Say URL Completed in {elapsed_time}")
@@ -592,7 +592,7 @@ async def async_get_playback_audio_path(params: dict, options: dict):
             if alexa_media_player_count > 0:
                 _LOGGER.warning("Unable to add cover art. Alexa Media Player media_players are unable to play MP3 file with cover art")
             else:
-                cover_art_filepath = f"{filesystem_helper.path_to_parent_folder('custom_components')}/chime_tts/cover_art.jpg"
+                cover_art_filepath = f"{filesystem_helper.path_to_parent_folder('custom_components')}/chime_tts_renewed/cover_art.jpg"
                 if await hass.async_add_executor_job(filesystem_helper.path_exists, cover_art_filepath):
                     _LOGGER.debug("Adding cover art to %s", new_audio_file)
                     new_audio_file = await helpers.async_ffmpeg_convert_from_file(
@@ -1291,7 +1291,7 @@ async def async_refresh_stored_data(hass: HomeAssistant):
 async def async_store_data(hass: HomeAssistant, key: str, value):
     """Store a key/value pair in the integration's stored data."""
     if hass is not None and key is not None and value is not None:
-        _LOGGER.debug(" - Saving data to chime_tts storage:")
+        _LOGGER.debug(" - Saving data to chime_tts_renewed storage:")
         _LOGGER.debug('   - key:   "%s"', key)
         _LOGGER.debug('   - value: "%s"', value)
         if _data[DATA_STORAGE_KEY] is None:

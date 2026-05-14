@@ -1,5 +1,5 @@
 {
-    "name": "nimroddolev/chime_tts",
+    "name": "systems-monitor/chime_tts_renewed/",
     "network": "host",
     "image": "mcr.microsoft.com/vscode/devcontainers/python:0-3.10-bullseye",
     "postCreateCommand": "scripts/setup",
