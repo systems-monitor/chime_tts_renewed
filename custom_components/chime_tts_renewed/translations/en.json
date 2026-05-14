@@ -2,27 +2,27 @@
     "config": {
         "step": {
             "no_tts_platforms": {
-                "title": "Chime TTS",
-                "description": "ℹ️ No TTS Platforms Found.\n\nThe Chime TTS integration uses TTS platform/s already installed in your Home Assistant Instance.\n\nPlease add at least 1 TTS platform to begin using it.\n\nFor more details please review the documentation."
+                "title": "Chime TTS Renewed",
+                "description": "ℹ️ No TTS Platforms Found.\n\nThe Chime TTS Renewed integration uses TTS platform/s already installed in your Home Assistant Instance.\n\nPlease add at least 1 TTS platform to begin using it.\n\nFor more details please review the documentation."
             }
         }
     },
     "services": {
         "clear_cache": {
             "name": "Clear Cache",
-            "description": "Removes all locally cached TTS audio files created from Chime TTS",
+            "description": "Removes all locally cached TTS audio files created from Chime TTS Renewed",
             "fields": {
                 "clear_chimes_cache": {
                     "name": "Temporary Chimes Cache",
-                    "description": "Remove the cached local chime files downloaded by Chime TTS"
+                    "description": "Remove the cached local chime files downloaded by Chime TTS Renewed"
                 },
                 "clear_temp_tts_cache": {
-                    "name": "Temporary Chime TTS Cache",
-                    "description": "Remove the local temporary audio files stored in the Chime TTS cache"
+                    "name": "Temporary Chime TTS Renewed Cache",
+                    "description": "Remove the local temporary audio files stored in the Chime TTS Renewed cache"
                 },
                 "clear_www_tts_cache": {
-                    "name": "Publicly Accessible Chime TTS Cache",
-                    "description": "Remove the publicly accessible audio files stored in the Chime TTS cache"
+                    "name": "Publicly Accessible Chime TTS Renewed Cache",
+                    "description": "Remove the publicly accessible audio files stored in the Chime TTS Renewed cache"
                 },
                 "clear_ha_tts_cache": {
                     "name": "Home Assistant TTS Cache",
@@ -222,7 +222,7 @@
     "options": {
         "step": {
             "init": {
-                "title": "Chime TTS Configuration",
+                "title": "Chime TTS Renewed Configuration",
                 "description": "Configurable options for the `chime_tts_renewed.say` and `chime_tts_renewed.say_url` actions.\r\n\r\nPlease review the [documentation](https://nimroddolev.github.io/chime_tts_renewed/docs/documentation/configuration/) for more details",
                 "data": {
                     "queue_timeout": "Service call timeout (in seconds)",
