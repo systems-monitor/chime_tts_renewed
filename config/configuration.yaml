@@ -5,14 +5,14 @@ default_config:
 logger:
   default: info
   logs:
-    custom_components.chime_tts: debug
+    custom_components.chime_tts_renewed: debug
 
 homeassistant:
   media_dirs:
-    local: /workspaces/chime_tts/media
+    local: /workspaces/chime_tts_renewed/media
   allowlist_external_dirs:
-    - "/workspaces/chime_tts/media"
-    - "/workspaces/chime_tts/config/www"
+    - "/workspaces/chime_tts_renewed/media"
+    - "/workspaces/chime_tts_renewed/config/www"
 
 media_source:
 

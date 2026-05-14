@@ -65,4 +65,4 @@ class ChimeTTSNotificationService(BaseNotificationService):
                 service_data=kwargs,
                 blocking=True)
         except Exception as error:
-            _LOGGER.error("Service `chime_tts.say` error: %s", error)
+            _LOGGER.error("Service `chime_tts_renewed.say` error: %s", error)

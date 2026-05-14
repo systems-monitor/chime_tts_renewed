@@ -48,7 +48,7 @@ class MediaPlayerHelper:
                                              announce,
                                              fade_audio):
         """Initialize media player entities."""
-        # Service call was from chime_tts.say_url, so media_players are irrelevant
+        # Service call was from chime_tts_renewed.say_url, so media_players are irrelevant
         if len(entity_ids) == 0:
             return []
 

@@ -1,4 +1,4 @@
-"""Constants for chime_tts."""
+"""Constants for chime_tts_renewed."""
 from logging import Logger, getLogger
 
 import os
@@ -6,7 +6,7 @@ import json
 
 LOGGER: Logger = getLogger(__package__)
 
-DOMAIN = "chime_tts"
+DOMAIN = "chime_tts_renewed"
 NAME = "Chime TTS"
 DESCRIPTION = "A custom Home Assistant integration to play audio with text-to-speech (TTS) messages"
 
@@ -29,7 +29,7 @@ OFFSET_KEY = "offset"
 DEFAULT_OFFSET_MS = 450
 CROSSFADE_KEY = "crossfade"
 
-DATA_STORAGE_KEY = "chime_tts_integration_data"
+DATA_STORAGE_KEY = "chime_tts_renewed_integration_data"
 AUDIO_PATH_KEY = "audio_path" # <-- Deprecated
 LOCAL_PATH_KEY = "local_path"
 PUBLIC_PATH_KEY = "public_path"
@@ -51,15 +51,15 @@ PUBLIC_FOLDER_PATH = "/config/www/"
 CUSTOM_CHIMES_PATH_KEY = "custom_chimes_path"
 DEFAULT_TEMP_CHIMES_PATH_KEY = "default_temp_chimes_path"
 TEMP_CHIMES_PATH_KEY = "temp_chimes_path"
-TEMP_CHIMES_PATH_DEFAULT = "/media/sounds/temp/chime_tts/chimes/"
+TEMP_CHIMES_PATH_DEFAULT = "/media/sounds/temp/chime_tts_renewed/chimes/"
 DEFAULT_TEMP_PATH_KEY = "default_temp_path"
 TEMP_PATH_KEY = "temp_path"
-TEMP_PATH_DEFAULT = "/media/sounds/temp/chime_tts/"
+TEMP_PATH_DEFAULT = "/media/sounds/temp/chime_tts_renewed/"
 DEFAULT_WWW_PATH_KEY = "default_www_path"
 WWW_PATH_KEY = "www_path"
-WWW_PATH_DEFAULT = "/config/www/chime_tts/"
+WWW_PATH_DEFAULT = "/config/www/chime_tts_renewed/"
 
-MP3_PRESET_PATH = "custom_components/chime_tts/mp3s/"
+MP3_PRESET_PATH = "custom_components/chime_tts_renewed/mp3s/"
 MP3_PRESET_PATH_PLACEHOLDER = "mp3_path_placeholder-"  # DEPRECATED
 DEFAULT_CHIME_OPTIONS = [
     {"label": "Ba-Dum Tss!", "value": "ba_dum_tss"},

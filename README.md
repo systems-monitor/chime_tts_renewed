@@ -1,13 +1,12 @@
-![Chime TTS](https://raw.githubusercontent.com/nimroddolev/chime_tts/main/icon.png)
+![Chime TTS Renewed](https://raw.githubusercontent.com/systems-monitor/chime_tts_renewed/main/icon.png)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
-![version](https://img.shields.io/github/v/release/nimroddolev/chime_tts)
+![version](https://img.shields.io/github/v/release/systems-monitor/chime_tts_renewed)
 [![Community Forum][forum-shield]][forum]
-<a href="https://www.buymeacoffee.com/nimroddolev"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="0px"></a>
 
 Chime TTS is a custom Home Assistant integration that eliminates the audio lag between playing a chime/notification sound effect before a TTS audio notification.
 
-#### This ia a ressurection of a dead project with minor fixes. All the hard work and thanks belongs to https://github.com/nimroddolev/chime_tts
+#### This is a ressurection of a dead project with minor fixes. All the hard work and thanks belongs to https://github.com/nimroddolev/chime_tts
 
 
 - [What is Chime TTS?](https://nimroddolev.github.io/chime_tts/docs/getting-started#what-is-chime-tts)
@@ -24,17 +23,17 @@ Chime TTS is a custom Home Assistant integration that locally combines TTS audio
 
 ### The Problem:
 
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nimroddolev/chime_tts/main/images/wiki/home/no_chime_tts-dark.png">
-<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nimroddolev/chime_tts/main/images/wiki/home/no_chime_tts-light.png">
-<img alt="Latency is introduced between the notification chime and the TTS audio" src="https://raw.githubusercontent.com/nimroddolev/chime_tts/main/images/wiki/home/no_chime_tts-dark.png">
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/systems-monitor/chime_tts_renewed/main/images/wiki/home/no_chime_tts-dark.png">
+<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/systems-monitor/chime_tts_renewed/main/images/wiki/home/no_chime_tts-light.png">
+<img alt="Latency is introduced between the notification chime and the TTS audio" src="https://raw.githubusercontent.com/systems-monitor/chime_tts_renewed/main/images/wiki/home/no_chime_tts-dark.png">
 
 Adding a notification chime before Text-To-Speech (TTS) audio messages requires two separate action calls, which introduces lag due to networking latency of cloud TTS platforms, audio processing, and delays before media_player playback begins.
 
 ### The Solution:
 
-<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nimroddolev/chime_tts/main/images/wiki/home/wuth_chime_tts-dark.png">
-<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nimroddolev/chime_tts/main/images/wiki/home/with_chime_tts-light.png">
-<img alt="Chime TTS removes the latency between the notification chime and the TTS audio" src="https://raw.githubusercontent.com/nimroddolev/chime_tts/main/images/wiki/home/with_chime_tts-dark.png">
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/systems-monitor/chime_tts_renewed/main/images/wiki/home/wuth_chime_tts-dark.png">
+<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/systems-monitor/chime_tts_renewed/main/images/wiki/home/with_chime_tts-light.png">
+<img alt="Chime TTS removes the latency between the notification chime and the TTS audio" src="https://raw.githubusercontent.com/systems-monitor/chime_tts_renewed/main/images/wiki/home/with_chime_tts-dark.png">
 
 **Chime TTS** addresses this issue by combining the audio files into _a single file_ locally on your Home Assistant device. This combined file is then played through your speakers in one seamless event, eliminating any lag.
 
@@ -47,7 +46,7 @@ Chime TTS offers various features that enhance TTS audio playback experience:
 - **No lag or timing issues:** Precise timing between audio files without cloud TTS delays.
 - **Customizable audio cues:** Play preset or custom audio before and after TTS messages.
 - **Flexible TTS platform selection:** Supports various [TTS platform integrations](https://www.home-assistant.io/integrations/#text-to-speech).
--  **Easy action invocation:** Use the [`chime_tts.say`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say-action/) and [`chime_tts.say_url`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say_url-action/) actions in automations and scripts.
+-  **Easy action invocation:** Use the [`chime_tts_renewed.say`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say-action/) and [`chime_tts_renewed.say_url`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say_url-action/) actions in automations and scripts.
 -  **Set media player  volume:** Notifications can be played at a defined volume and restored after playback.
 - **Restore previous audio:** Chime TTS supports pausing and resuming currently playing audio beyond the media player platforms supported by Home Assistant *(eg: HomePods)*.
 -  **Mix and match TTS platforms:** Combine TTS audio using multiple TTS platforms within the same audio announcement.
@@ -74,15 +73,15 @@ Follow these easy steps to get started with Chime TTS:
 
 ### Actions
 
-Chime TTS adds 4 new actions to your Home Assistant instance: `chime_tts.say`, `chime_tts.say_url`, `chime_tts.replay` and `chime_tts.clear_cache`. Discover how you can use these actions and the features they offer:
+Chime TTS (Renewed) adds 4 new actions to your Home Assistant instance: `chime_tts_renewed.say`, `chime_tts_renewed.say_url`, `chime_tts_renewed.replay` and `chime_tts_renewed.clear_cache`. Discover how you can use these actions and the features they offer:
 
-- [`chime_tts.say`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say-action/): Play audio and TTS messages with various settings.
-- [`chime_tts.say_url`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say_url-action/): Generates a publicly accessible URL to the MP3 file generated by `chime_tts.say`.
-- [`chime_tts.replay`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/replay-action): Repeats the previous action call made to `chime_tts.say`.
-- [`chime_tts.clear_cache`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/clear_cache-action): Clear generated audio cache.
+- [`chime_tts_renewed.say`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say-action/): Play audio and TTS messages with various settings.
+- [`chime_tts_renewed.say_url`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/say_url-action/): Generates a publicly accessible URL to the MP3 file generated by `chime_tts_renewed.say`.
+- [`chime_tts_renewed.replay`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/replay-action): Repeats the previous action call made to `chime_tts_renewed.say`.
+- [`chime_tts_renewed.clear_cache`](https://nimroddolev.github.io/chime_tts/docs/documentation/actions/clear_cache-action): Clear generated audio cache.
 
 ### Notify Entities
-Chime TTS adds a [notify platform](https://www.home-assistant.io/integrations/notify/): "[chime_tts](https://nimroddolev.github.io/chime_tts/docs/documentation/notify)", which allows you to create fully customised notify entries for use in your automations and scripts.
+Chime TTS adds a [notify platform](https://www.home-assistant.io/integrations/notify/): "[chime_tts_renewed](https://nimroddolev.github.io/chime_tts/docs/documentation/notify)", which allows you to create fully customised notify entries for use in your automations and scripts.
 
 ***
 

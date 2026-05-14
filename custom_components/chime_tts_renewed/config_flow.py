@@ -224,7 +224,7 @@ class ChimeTTSOptionsFlowHandler(config_entries.OptionsFlow):
             _errors[TEMP_PATH_KEY] = TEMP_PATH_KEY
         ###
 
-        # `chime_tts.say_url` folder must be subfolder of an external directory
+        # `chime_tts_renewed.say_url` folder must be subfolder of an external directory
         external_folder_in_external_dirs = False
         sub_dir = os.path.abspath(self.data[WWW_PATH_KEY])
         # Verify the subdirectory starts with the parent directory path
