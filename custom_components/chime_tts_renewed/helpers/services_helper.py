@@ -49,7 +49,9 @@ class ChimeTTSServicesHelper:
             final_options: list = DEFAULT_CHIME_OPTIONS + custom_chime_options
             final_options = sorted(final_options, key=lambda x: x['label'].lower())
             if not custom_chime_options:
-                final_options.append({"label": "*** Add a local folder path in the configuration for your own custom chimes ***", "value": ""})
+                 # HA 2025.8+ rejects empty-string values in select options;
+                 # use a non-empty sentinel for the placeholder hint.
+                final_options.append({"label": "*** Add a local folder path in the configuration for your own custom chimes ***", "value": "_custom_chimes_placeholder"})
 
             # New chimes detected?
             if final_options != services_yaml['say']['fields']['chime_path']['selector']['select']['options']:
