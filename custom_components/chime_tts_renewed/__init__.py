@@ -84,9 +84,9 @@ from .const import (
     CROSSFADE_KEY,
 )
 
-CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
-
 from .config import SONOS_SNAPSHOT_ENABLED
+
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 _LOGGER = logging.getLogger(__name__)
 _data = {}
