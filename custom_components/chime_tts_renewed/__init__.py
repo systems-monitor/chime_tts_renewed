@@ -27,6 +27,7 @@ from homeassistant.const import CONF_ENTITY_ID
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, ServiceResponse, SupportsResponse
 from homeassistant.helpers import storage
+import homeassistant.helpers.config_validation as cv
 from homeassistant.exceptions import (
     HomeAssistantError,
     ServiceNotFound,
@@ -82,7 +83,10 @@ from .const import (
     OFFSET_KEY,
     CROSSFADE_KEY,
 )
+
 from .config import SONOS_SNAPSHOT_ENABLED
+
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 _LOGGER = logging.getLogger(__name__)
 _data = {}
