@@ -435,7 +435,7 @@ class ChimeTTSHelper:
                             tts_entities.append(platform)
                     except Exception:
                         pass
-    
+
             if tts_entities:
                 return sorted(tts_entities)
 
