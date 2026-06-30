@@ -351,7 +351,7 @@ class ChimeTTSHelper:
 
         # Match for installed tts platform
         if tts_platform.lower() in installed_tts_platforms:
-            selected_platform = tts_platform.lower()            
+            selected_platform = tts_platform.lower()
         elif tts_platform.find("google") != -1:
             # Return alternate Google Translate entity, eg: "tts.google_en_com"
             if tts_platform.startswith("tts."):
@@ -412,7 +412,7 @@ class ChimeTTSHelper:
 
     def get_installed_tts_platforms(self, hass: HomeAssistant) -> list[str]:
         """List of installed tts platforms."""
-        
+
         # Try the new 2025.8+ method first
         try:
             # Check for TTS entities (most reliable method in 2025.8+)
@@ -423,7 +423,7 @@ class ChimeTTSHelper:
                     platform_name = str(entity.entity_id).replace("tts.", "").split("_")[0]
                     if platform_name not in tts_entities:
                         tts_entities.append(platform_name)
-            
+
             # Add common TTS platforms if they exist
             known_platforms = ["google_translate", "cloud", "edge_tts", "openai_tts", "piper"]
             for platform in known_platforms:
@@ -433,15 +433,15 @@ class ChimeTTSHelper:
                         service_exists = hass.services.has_service("tts", f"{platform}_say")
                         if service_exists and platform not in tts_entities:
                             tts_entities.append(platform)
-                    except:
+                    except Exception:
                         pass
-            
+    
             if tts_entities:
                 return sorted(tts_entities)
-                
+
         except Exception as e:
             _LOGGER.debug("New TTS detection method failed: %s", e)
-        
+
         # Fallback to old method for older HA versions
         try:
             # Old method for HA < 2025.8
@@ -449,7 +449,7 @@ class ChimeTTSHelper:
             return sorted(tts_providers)
         except Exception as e:
             _LOGGER.debug("Legacy TTS detection method failed: %s", e)
-        
+
         # Last resort - return common platforms
         _LOGGER.warning("Could not detect TTS platforms, returning common defaults")
         return ["google_translate", "cloud", "edge_tts"]
