@@ -223,7 +223,7 @@
         "step": {
             "init": {
                 "title": "Chime TTS Renewed Configuration",
-                "description": "Configurable options for the `chime_tts_renewed.say` and `chime_tts_renewed.say_url` actions.\r\n\r\nPlease review the [documentation](https://nimroddolev.github.io/chime_tts_renewed/docs/documentation/configuration/) for more details",
+                "description": "Configurable options for the `chime_tts_renewed.say` and `chime_tts_renewed.say_url` actions.\r\n\r\nPlease review the documentation for more details",
                 "data": {
                     "queue_timeout": "Service call timeout (in seconds)",
                     "tts_timeout": "TTS audio generation timeout (in seconds)",
